@@ -39,7 +39,7 @@ async def load_pic(message: types.Message, state: FSMContext):
     async with state.proxy() as data:
         error = False
         file_name = 'user_photo.jpg'
-        file_path = 'handlers/' + file_name
+        file_path = file_name
         try:
             await message.photo[-1].download(destination_file=file_path)
             image = Image.open(file_path)
